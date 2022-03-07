@@ -45,12 +45,14 @@ function executeResult($sql) {
 */
 ?>
 <?php
-
+    if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 //Test cái cũ
     $server   = "localhost";   	        //Khai báo server
     $username = "root"; 		        //Khai báo username
     $password = "";      		        //Khai báo password
-    $database   = "kinhdoanhdienthoai"; //Khai báo database
+    $database = "kinhdoanhdienthoai";   //Khai báo database
 
     // Kết nối database
     $conn = new mysqli($server, $username, $password, $database);
@@ -60,12 +62,16 @@ function executeResult($sql) {
         die("Kết nối CSDL thất bại!<br>--> ".$conn->connect_error);
         exit();
     }
-    echo "Kết nối thành công!";
+    //echo "Kết nối thành công!";
 
     //Gán các biến database
     $conn->select_db('kinhdoanhdienthoai');
 
     //Biện pháp tránh lỗi font khi dùng các phiên bản xampp khác nhau
     mysqli_set_charset($conn, 'utf8');
-
+    // if (!function_exists('your_function_name'))   {
+    //     function your_function_name()  {
+    //       ........
+    //     }
+    //   }
 ?>

@@ -15,7 +15,8 @@
     }
 
     //
-    $sql = "select MaDT,TenDT,GiaGoc,GiaKhuyenMai,DanhGia 
+
+    $sql = "select MaDT,TenDT,GiaGoc,GiaKhuyenMai
             from dienthoai 
             order by MaDT desc
             limit $vtbd,$so_du_lieu";
@@ -41,12 +42,13 @@
 
                         $link_anh = "hinh_anh/san_pham/".$sql_6['TenHinh'];
                         $link_chi_tiet = "?thamso=chi_tiet_san_pham&MaDT=".$ma_DT;
+                        
 
                         //Màu mè tý :)
                         echo "<table border='1px' width='100%'>";
                             echo "<tr>";
                                 echo "<td height='400px' align='center'>";
-                                    echo "<a href='$link_chi_tiet'>";
+                                    echo "<a href='$link_chi_tiet' target='_blank'>";
                                         echo "<img width='100%'
                                         height='100%' object-fit='fill'; src='$link_anh'>";
                                     echo "</a>";
@@ -72,7 +74,7 @@
                             echo "</tr>";
                             echo "<tr>";
                                     echo "<td align='center'>";
-                                        echo "Đánh giá: ".$sql_2['DanhGia']."✩";
+                                        echo "Đánh giá: ✩";
                                     echo "</td>";
                             echo "</tr>";
                         echo "</table>";
