@@ -1,7 +1,7 @@
 <?php    
     include("ket_noi.php");
     include("chuc_nang/dang_nhap/xac_dinh_dang_nhap.php");
-//test
+//test 123
     // if( isset($_POST['thong_tin_dat_hang']) ) {
     //     include("chuc_nang/gio_hang/thuc_hien_mua_hang.php");
     // }
